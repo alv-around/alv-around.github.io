@@ -1,14 +1,21 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-static'; // Or whatever adapter you are using
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(
-			//{ fallback: '404.html' }
-		),
+		// This tells SvelteKit where your app will be served from.
+		// For GitHub Pages, it's typically the repository name.
 		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-		}
+			base: process.env.BASE_PATH || '', // Dynamically sets base path from env variable
+		},
+		adapter: adapter({
+      // default options are sufficient for most static deployments
+      pages: 'build',
+      assets: 'build',
+      fallback: undefined,
+      precompress: false,
+      strict: true
+    }),
 	}
 };
 
