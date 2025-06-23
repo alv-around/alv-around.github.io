@@ -72,7 +72,7 @@
 </script>
 
 <span
-  class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset {bgColorClass} {textColorClass} {ringColorClass}"
+  class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium font-sans ring-1 ring-inset {bgColorClass} {textColorClass} {ringColorClass}"
 >
   {text}
 </span>

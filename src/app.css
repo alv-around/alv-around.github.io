@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@tailwind base;
+@tailwind components; /* Ensure this is included */
+@tailwind utilities;
+
+html {
+  @apply bg-amber-50;
+}
+
+/* Define your custom heading styles here */
+h1 {
+  @apply text-6xl font-extrabold mb-4; /* Matches the example above */
+}
+
+h2 {
+  @apply text-3xl font-bold mb-3; /* Matches the example above */
+}
+
+h3 {
+  @apply text-2xl font-semibold mb-2;
+}
+
+h4 {
+  @apply text-xl font-medium mb-1;
+}
+
+p {
+  @apply text-xl mb-1; /* You can also add default paragraph styles */
+}
+
+body{
+  font-family: 'Caveat Variable', cursive;
+  font-weight: 600;
+}

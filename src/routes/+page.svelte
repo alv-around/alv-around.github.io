@@ -1,19 +1,18 @@
 <script>
   import Badge from "$lib/badge.svelte"; // Adjust path if you put it in src/lib/components/Badge.svelte
 
-  const ghUserName = "alv-around";
-  const ghSummaryStats = `https://github-readme-stats.vercel.app/api?username=${ghUserName}&show_icons=true`;
-  const topLanguageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUserName}&layout=compact`;
+  const ghUserName = "alv-around"; // TODO: add configuration, so sensitive information is not displayed
+  const statsBackgroundColor = "00000000"; // transparent
+  const ghSummaryStats = `https://github-readme-stats.vercel.app/api?username=${ghUserName}&show_icons=true&bg_color=${statsBackgroundColor}`;
+  const topLanguageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUserName}&layout=compact&bg_color=${statsBackgroundColor}`;
 </script>
 
-<h1>Welcome to my world!</h1>
 <p>
-  I am software engineer interested in way to many stuff. This is my personal
-  website
+  I am software engineer interested in way to many stuff. Welcome to my world!
 </p>
 
-<h3>Here are some of my interests:</h3>
-<div class="flex gap-3">
+<h4>Here are some of my interests:</h4>
+<div class="flex gap-3 mb-4">
   <Badge text="Software Development" color="yellow" />
   <Badge text="Distributed Systems" color="blue" />
   <Badge text="Open Source" color="green" />
@@ -39,7 +38,6 @@
   </picture>
 
   <picture>
-    <source srcset={topLanguageStats} media="(prefers-color-scheme: dark)" />
     <source
       srcset={topLanguageStats}
       media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
