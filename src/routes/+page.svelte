@@ -1,4 +1,6 @@
 <script>
+  import Badge from "$lib/badge.svelte"; // Adjust path if you put it in src/lib/components/Badge.svelte
+
   const ghUserName = "alv-around";
   const ghSummaryStats = `https://github-readme-stats.vercel.app/api?username=${ghUserName}&show_icons=true`;
   const topLanguageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUserName}&layout=compact`;
@@ -10,23 +12,46 @@
   website
 </p>
 
+<h3>Here are some of my interests:</h3>
+<div class="flex gap-3">
+  <Badge text="Software Development" color="yellow" />
+  <Badge text="Distributed Systems" color="blue" />
+  <Badge text="Open Source" color="green" />
+  <Badge text="Cryptography" color="pink" />
+  <Badge text="System Architecture" color="indigo" />
+  <Badge text="Rust" color="red" />
+  <Badge text="Linux" color="purple" />
+</div>
+
 <h2>Stats</h2>
 <!-- github user stats -->
-<picture>
-  <source
-    srcset={ghSummaryStats}
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src={ghSummaryStats} alt="Github Summary Stats" />
-</picture>
+<div class="flex gap-1 item-start">
+  <picture>
+    <source
+      srcset={ghSummaryStats}
+      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+    />
+    <img
+      src={ghSummaryStats}
+      alt="Github Summary Stats"
+      class="h-42 w-auto object-contain"
+    />
+  </picture>
 
-<picture>
-  <source srcset={topLanguageStats} media="(prefers-color-scheme: dark)" />
-  <source
-    srcset={topLanguageStats}
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src={topLanguageStats} alt="Github Summary Stats" />
-</picture>
+  <picture>
+    <source srcset={topLanguageStats} media="(prefers-color-scheme: dark)" />
+    <source
+      srcset={topLanguageStats}
+      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+    />
+    <img
+      src={topLanguageStats}
+      alt="Github Summary Stats"
+      class="h-42 w-auto object-contain"
+    />
+  </picture>
+</div>
 
-<h2>Some of my interest are:</h2>
+<style lang="postcss">
+  @reference "tailwindcss";
+</style>
