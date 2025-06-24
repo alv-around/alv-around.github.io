@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "@fontsource-variable/caveat";
+
+/* src/app.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Custom CSS Variables for Notepad Theme --- */
+:root {
+  --notepad-line-height: 2rem; /* Standard line height for text (24px if 1rem = 16px) */
+  --notepad-line-color: #d1d5db; /* Light gray for the lines (Tailwind's gray-300) */
+  --notepad-paper-bg: theme('colors.amber.50'); /* Matches Tailwind's bg-yellow-50 */
+}
+
+/* Ensure body background matches if the outer layout div doesn't cover all HTML/Body */
+body {
+  background-color: var(--notepad-paper-bg);
+  font-family: 'Caveat Variable', cursive;
+  font-weight: 600;
+}
+
+/* --- Global Typography Resets & Baseline Alignment --- */
+/* Apply consistent line-height and margin resets for common text elements */
+p,
+h2, h3, h4, h5, h6,
+ul, ol, li, pre, blockquote {
+  /* Set consistent line-height to match background lines */
+  line-height: var(--notepad-line-height);
+  margin-top: 0; /* Remove default top margins */
+  margin-bottom: var(--notepad-line-height); /* Set consistent bottom margin for rhythm */
+  padding: 0; /* Reset default padding */
+}
+
+/* Specific margin adjustments for headings to maintain visual hierarchy while aligning */
+/* INFO: use h1 only for navLink elements*/
+h1 { @apply text-4xl font-bold; margin: 1rem }
+h2 { @apply text-3xl font-bold; margin-bottom: var(--notepad-line-height); }
+h3 { @apply text-2xl font-semibold; margin-bottom: var(--notepad-line-height); }
+h4 { @apply text-xl font-semibold; margin-bottom: var(--notepad-line-height); }
+h5 { @apply text-lg font-medium; margin-bottom: var(--notepad-line-height); }
+h6 { @apply text-base font-medium; margin-bottom: var(--notepad-line-height); }
+
+/* Remove bottom margin for the last child in a block to avoid extra blank lines at the end */
+/* This is a general rule, you might need to adjust for specific components */
+p,
+h2, h3, h4, h5, h6,
+ul, ol, li, pre, blockquote: last-child {
+  margin-bottom: 0;
+}
+
+/* --- Notepad Lines Background --- */
+.notepad-background {
+  /* Create repeating horizontal lines using a linear gradient */
+  background-image:
+    linear-gradient(to bottom,
+      transparent calc(var(--notepad-line-height) - 1px), /* Transparent until 1px before the end of the line height */
+      var(--notepad-line-color) calc(var(--notepad-line-height) - 1px), /* Start of the line */
+      var(--notepad-line-color) var(--notepad-line-height) /* End of the line */
+    );
+  background-size: 100% var(--notepad-line-height); /* Repeat the gradient pattern at our line height */
+  background-repeat: repeat-y; /* Only repeat vertically */
+  background-position-y: 0; /* Ensures the first line starts exactly at the top */
+  background-color: var(--notepad-paper-bg); /* Fallback background color, matches global */
+}
+
+.vertical-red-line {
+  /* Add a subtle vertical red line on the left, like a notebook */
+  border-right: 2px solid theme('colors.red.400');
+  /* padding-left: 1.5rem;  */
+}
