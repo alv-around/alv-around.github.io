@@ -11,7 +11,7 @@
     <h1><NavLink href="/contact">Contact</NavLink></h1>
   </nav>
 
-  <div class="notepad-background min-h-screen">
+  <div class="notepad-background min-h-screen min-w-screen">
     {@render children()}
   </div>
 </div>
