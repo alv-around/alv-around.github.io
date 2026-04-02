@@ -7,9 +7,9 @@
   const topLanguageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUserName}&layout=compact&bg_color=${statsBackgroundColor}`;
 </script>
 
-<p>
+<h4>
   I am software engineer interested in way to many stuff. Welcome to my world!
-</p>
+</h4>
 
 <h4>Here are some of my interests:</h4>
 <div class="flex gap-3 mb-4">
