@@ -8,13 +8,12 @@
   <div class="min-h-screen vertical-red-line"></div>
   <div>
 
-    <div class="flex flex-row items-end justify-between h-32 border-b">
-      <h1 class="m-0 leading-none">Alvaro Alonso</h1>
+    <div class="flex flex-row items-end justify-between h-32 border-b border-gray-300">
+      <h1 class="m-0 leading-none">Alv-Around</h1>
 
       <nav class="flex flex-row items-end gap-8">
         <h3><NavLink href="/">Home</NavLink></h3>
         <h3><NavLink href="/blog">Blog</NavLink></h3>
-        <h3><NavLink href="/contact">Contact</NavLink></h3>
       </nav>
     </div>
 
