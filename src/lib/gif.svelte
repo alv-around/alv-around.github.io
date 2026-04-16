@@ -1,6 +1,3 @@
-<script lang="ts">
-  // No Svelte script logic needed for this direct embed
-</script>
 
 <div class="tenor-gif-wrapper">
   <div
@@ -27,15 +24,11 @@
 </div>
 
 <style>
-  /* Optional: Add some styling to control the GIF's maximum width or centering */
   .tenor-gif-wrapper {
     max-width: 500px; /* Example: Limit the max width of the GIF container */
   }
 
-  /* You might also want to ensure the iframe scales correctly */
   .tenor-gif-embed {
-    /* If there are any issues with responsiveness, you might need to adjust this.
-       Tenor's script usually handles this well, especially with data-width="100%" */
-    height: auto; /* Ensure height adjusts with width */
+    height: auto;
   }
 </style>

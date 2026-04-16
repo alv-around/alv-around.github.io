@@ -11,7 +11,8 @@
     | "blue"
     | "indigo"
     | "purple"
-    | "pink";
+    | "pink"
+    | "orange";
   export let color: BadgeColor = "gray"; // Default color
 
   // Determine the Tailwind classes based on the color prop
@@ -62,6 +63,11 @@
         textColorClass = "text-pink-700";
         ringColorClass = "ring-pink-700/10";
         break;
+      case "orange":
+        bgColorClass = "bg-orange-50";
+        textColorClass = "text-orange-700";
+        ringColorClass = "ring-orange-700/10";
+        break;
       default:
         // Fallback to gray if an unknown color is provided
         bgColorClass = "bg-gray-50";
@@ -72,7 +78,13 @@
 </script>
 
 <span
-  class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium font-sans ring-1 ring-inset {bgColorClass} {textColorClass} {ringColorClass}"
+  class="inline-flex items-center rounded-md h-7  px-2 py-1 text-xs font-medium font-sans ring-1 ring-inset {bgColorClass} {textColorClass} {ringColorClass}"
 >
   {text}
 </span>
+
+<style>
+span {
+  margin-top: 1px;
+}
+</style>
