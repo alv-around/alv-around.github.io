@@ -1,5 +1,6 @@
 <script>
   import Badge from "$lib/badge.svelte"; // Adjust path if you put it in src/lib/components/Badge.svelte
+  import Break from "$lib/break.svelte";
 
   const ghUserName = "alv-around"; // TODO: add configuration, so sensitive information is not displayed
   const gh = `https://github.com/${ghUserName}`;
@@ -8,14 +9,14 @@
   const topLanguageStats = `https://github-readme-stats.vercel.app/api/top-langs/?username=${ghUserName}&layout=compact&bg_color=${statsBackgroundColor}`;
 </script>
 
-<br>
+<Break />
 <h4>
   Hi! Am Alvaro, welcome to my world!
   I am software engineer interested distributed systems, system architecture, and cryptography (among others...). 
   From time to time I tincker with my linux PC and home server.
   I care about open source, the free web and digital sovereignty.
 </h4>
-<br>
+<Break />
 
 <h4>These are some of the techologies/topics I am interested:</h4>
 <div class="mx-3">
@@ -56,7 +57,7 @@
 For more details of the projects I work on check my
 <a href={gh} class="underline text-teal-500">github profile</a>.
 </h4>
-<br>
+<Break />
 
 <div class="mx-3">
   <div class="flex gap-1 item-start">
