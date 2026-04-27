@@ -20,7 +20,6 @@ body {
 
 /* --- Global Typography Resets & Baseline Alignment --- */
 /* Apply consistent line-height and margin resets for common text elements */
-p,
 ul, ol, li, pre, blockquote {
   /* Set consistent line-height to match background lines */
   line-height: var(--notepad-line-height);
@@ -38,7 +37,7 @@ h4 { @apply text-xl font-semibold; }
 h5 { @apply text-lg font-medium; }
 h6 { @apply text-base font-medium; }
 
-h2, h3, h4, h5, h6 { 
+p, h2, h3, h4, h5, h6 { 
   line-height: var(--notepad-line-height);
 }
 
