@@ -34,7 +34,6 @@ export const load: PageServerLoad = async () =>  {
 
             const title = titleMatch? titleMatch[1] : "";
             const description = descMatch? descMatch[1] : "";
-            console.log([title, description, file]);
             return [title, description, file];
         })
         .filter(([title, desc, _]) => title !== "" && desc !== "")

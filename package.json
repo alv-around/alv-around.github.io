@@ -25,6 +25,8 @@
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.10",
+		"@types/marked": "^5.0.2",
+		"marked": "^18.0.2",
 		"tailwindcss": "^4.1.10"
 	}
 }

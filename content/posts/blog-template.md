@@ -9,4 +9,4 @@ cover = "imgs/cute-image.webp"
 tags = []
 -->
 
-# Blog Title
+This is a great blog post
