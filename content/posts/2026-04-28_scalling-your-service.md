@@ -8,7 +8,7 @@ factors. From choosing the right tools for the job, to architectural and system
 considerations, as well as the kind of hardware where your software runs. In
 this blog post
 
-```rust preview
+```rust
 fn main() {
     println!("hello world!");
 }

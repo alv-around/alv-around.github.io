@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { error } from '@sveltejs/kit';
 import { marked } from 'marked';
-import markedCodePreview from 'marked-code-preview';
 import type { PageServerLoad } from './$types';
 
+// TODO: refactor together with `/blog`
 export const load: PageServerLoad = async ({ params }) => {
     const { slug } = params;
     const postsDir = path.resolve('content/posts');
@@ -43,25 +43,7 @@ export const load: PageServerLoad = async ({ params }) => {
         description = descMatch ? descMatch[1] : "";
     }
 
-    const renderer = {
-        code({ text, lang }: any) {
-            const language = (lang || '').match(/\S*/)[0];
-            const escaped = text
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&#39;');
-            if (!language) {
-                return `<pre><code>${escaped}</code></pre>\n`;
-            }
-            return `<pre data-lang="${language}"><code class="language-${language}">${escaped}</code></pre>\n`;
-        }
-    };
-
     const htmlContent = await marked
-        .use({ gfm: true, renderer })
-        .use(markedCodePreview())
         .parse(markdownContent);
 
     return {
