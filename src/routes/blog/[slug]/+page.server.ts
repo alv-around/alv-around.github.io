@@ -4,6 +4,7 @@ import { error } from '@sveltejs/kit';
 import { marked } from 'marked';
 import type { PageServerLoad } from './$types';
 
+// TODO: refactor together with `/blog`
 export const load: PageServerLoad = async ({ params }) => {
     const { slug } = params;
     const postsDir = path.resolve('content/posts');
@@ -42,7 +43,8 @@ export const load: PageServerLoad = async ({ params }) => {
         description = descMatch ? descMatch[1] : "";
     }
 
-    const htmlContent = await marked.parse(markdownContent);
+    const htmlContent = await marked
+        .parse(markdownContent);
 
     return {
         title,
@@ -51,4 +53,6 @@ export const load: PageServerLoad = async ({ params }) => {
         content: htmlContent
     };
 };
+
+
 
