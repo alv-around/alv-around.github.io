@@ -37,7 +37,7 @@ h4 { @apply text-xl font-semibold; }
 h5 { @apply text-lg font-medium; }
 h6 { @apply text-base font-medium; }
 
-p, h2, h3, h4, h5, h6 { 
+br, p, h2, h3, h4, h5, h6 { 
   line-height: var(--notepad-line-height);
 }
 
