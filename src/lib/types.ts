@@ -1,6 +1,6 @@
 export interface Post {
-    slug: string;
-    title?: string;
-    date?: string;
-    description?: string;
+  slug: string;
+  date: string;
+  title?: string;
+  description?: string;
 }
