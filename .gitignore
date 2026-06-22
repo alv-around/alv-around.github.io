@@ -24,3 +24,4 @@ vite.config.ts.timestamp-*
 
 # npmrc
 .npmrc_local
+.direnv
