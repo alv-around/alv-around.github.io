@@ -1,10 +1,10 @@
 <script lang="ts">
-  import BlogPreview from "$lib/blog-preview.svelte";
-  import Break from "$lib/break.svelte";
+import BlogPreview from "$lib/blog-preview.svelte";
+import Break from "$lib/break.svelte";
 
-  // TODO: remove flag 
-  // @ts-ignore
-  let { data } = $props() as any;
+// TODO: remove flag
+// @ts-ignore
+let { data } = $props() as any;
 </script>
 
 <div>

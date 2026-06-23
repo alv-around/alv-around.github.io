@@ -7,4 +7,9 @@ export default defineConfig({
     tailwindcss(),
     sveltekit(),
   ],
+  server: {
+    watch: {
+      ignored: ["**/.direnv/**"],
+    },
+  },
 });
