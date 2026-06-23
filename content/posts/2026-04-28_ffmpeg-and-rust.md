@@ -1,7 +1,7 @@
 +++
 title = "Ffmpeg on roids with rust"
 description = "
-Concurrent and cpu intensive applications are hard to get right! here is my attempt to it..
+Integrate Ffmpeg in your rust application with ez-ffmpeg
 "
 +++
 
@@ -149,6 +149,3 @@ workers to process the videos.
 We could also improve how videos get transport by using object storages instead
 of sending them over http request, or using gRPCs for the communication between
 client and server. But that, in another post :)
-
-<br/>
-<br/>

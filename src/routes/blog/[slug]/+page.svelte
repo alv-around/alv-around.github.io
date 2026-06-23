@@ -1,6 +1,7 @@
 <script lang="ts">
 import { onMount } from "svelte";
 import Break from "$lib/break.svelte";
+import GiscusComments from "$lib/giscus-comments.svelte";
 
 // @ts-ignore
 let { data } = $props() as any;
@@ -99,6 +100,8 @@ onMount(() => {
     <div class="markdown-content text-xl">
         {@html data.content}
     </div>
+
+    <GiscusComments />
 </article>
 
 <style>
@@ -150,5 +153,4 @@ onMount(() => {
   font-size: 0.9em;
 }
 </style>
-
 

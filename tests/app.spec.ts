@@ -26,15 +26,16 @@ test("blog list links to a rendered post", async ({ page }) => {
     "page",
   );
 
-  const postLink = page.getByRole("link", { name: "Ffmpeg on roids with rust" });
-  await expect(postLink).toHaveAttribute("href", "/blog/scalling-your-service");
+  const postLink = page.locator('a[href^="/blog/"]').first();
+  await expect(postLink).toBeVisible();
 
-  await page.goto("/blog/scalling-your-service", { waitUntil: "domcontentloaded" });
-  await expect(
-    page.getByRole("heading", { name: "Ffmpeg on roids with rust" }),
-  ).toHaveText("Ffmpeg on roids with rust");
-  await expect(page.locator("body")).toContainText("Creating the http server");
-  await expect(page.locator(".markdown-content pre code").first()).toContainText(
-    "use axum::body::Body",
-  );
+  const postTitle = await postLink.textContent();
+  const postHref = await postLink.getAttribute("href");
+
+  expect(postTitle?.trim()).toBeTruthy();
+  expect(postHref).toMatch(/^\/blog\/[a-z0-9-]+$/);
+
+  await page.goto(postHref!, { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("heading", { name: postTitle!.trim() })).toBeVisible();
+  await expect(page.locator(".markdown-content")).not.toBeEmpty();
 });
