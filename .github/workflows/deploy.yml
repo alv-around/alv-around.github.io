@@ -22,7 +22,7 @@ jobs:
 
       - name: build
         env:
-          PUBLIC_GISCUS_CATEGORY_ID: ${{ vars.PUBLIC_GISCUS_CATEGORY_ID }}
+          PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.PUBLIC_GISCUS_CATEGORY_ID }}
         #   BASE_PATH: "/${{ github.event.repository.name }}"
         run: npm run build
 

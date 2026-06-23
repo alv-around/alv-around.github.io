@@ -5,7 +5,7 @@ const giscusConfig = {
     repo: "alv-around/alv-around.github.io",
     repoId: "R_kgDOO1A5eQ",
     category: "General",
-    categoryId: "DIC_kwDOO1A5ec4C_ucy",
+    categoryId: "DIC_kwDOO1A5ec4C_ucy", //  String(import.meta.env.PUBLIC_GISCUS_CATEGORY_ID ?? "").trim(),
 };
 
 let container: HTMLDivElement | undefined;
@@ -29,7 +29,7 @@ onMount(() => {
     script.setAttribute("data-reactions-enabled", "1");
     script.setAttribute("data-emit-metadata", "0");
     script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-theme", "light");
     script.setAttribute("data-lang", "en");
 
     container.appendChild(script);
