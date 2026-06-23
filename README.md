@@ -36,3 +36,14 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## Blog comments
+
+Blog posts render Giscus comments when `PUBLIC_GISCUS_CATEGORY_ID` is set at build time.
+
+To finish enabling comments:
+
+1. Enable GitHub Discussions for `alv-around/alv-around.github.io`.
+2. Install the Giscus GitHub App for that repository.
+3. Use the `General` discussion category in Giscus and copy its category ID.
+4. Add that value as a GitHub Actions repository variable named `PUBLIC_GISCUS_CATEGORY_ID`.
