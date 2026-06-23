@@ -8,7 +8,7 @@ const giscusConfig = {
     categoryId: "DIC_kwDOO1A5ec4C_ucy", //  String(import.meta.env.PUBLIC_GISCUS_CATEGORY_ID ?? "").trim(),
 };
 
-let container: HTMLDivElement | undefined;
+let container: HTMLElement | undefined;
 const isConfigured = giscusConfig.categoryId.length > 0;
 
 onMount(() => {
